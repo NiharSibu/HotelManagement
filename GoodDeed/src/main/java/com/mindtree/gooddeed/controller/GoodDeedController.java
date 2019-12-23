@@ -26,15 +26,11 @@ public class GoodDeedController {
 	}
 	@GetMapping ("/insert-deedid/{deedId}")
 	private List<CampusMindDto> sendMind(@PathVariable int deedId){
-		List <CampusMindDto> res=new ArrayList<>();
-		res = deedService.getCampusMind(deedId);
-		return res;
+		return deedService.getCampusMind(deedId);
 	}
 	@GetMapping("/displyDeeds")
 	private List<GoodDeedDto> sendDeeds(){
-		List <GoodDeedDto> res=new ArrayList<>();
-		res=deedService.takeGoodDeeds();
-		return res;
+		return deedService.takeGoodDeeds();
 	}
 	@GetMapping("/getdeeds/{sId}")
 	private GoodDeedDto getDeeds(@PathVariable int sId){
